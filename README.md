@@ -2,13 +2,13 @@
 
 ## 📌 Description
 
-This project provides a full setup to track Universal Forwarder (UF) health across your on-premises SOC environment running on Splunk.
+This project provides a full setup to track Universal Forwarder (UF) health across on-premises SOC environment running on Splunk.
 
-You can:
+Our Objective:
 - Monitor whether UFs are alive (heartbeat tracking)
 - Detect delayed/missing logs from hosts
 - Track Deployment Server contact status
-- Deploy UFs using automation scripts
+- Deploy UFs using automation scripts 
 
 ---
 
