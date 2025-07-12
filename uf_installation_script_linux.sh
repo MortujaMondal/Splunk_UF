@@ -9,9 +9,9 @@ USER="splunkfwd"
 GROUP="splunkfwd"
 SPLUNK_HOME="/opt/splunkforwarder"
 TAR_FILE="splunkforwarder-9.2.4-c103a21bb11d-Linux-x86_64.tgz"
-DEPLOYMENT_SERVER="192.168.252.20:8089"
+DEPLOYMENT_SERVER="<Your-DS-IP>:8089"
 SPLUNK_USERNAME="splunk"
-SPLUNK_PASSWORD="Welcome12?"
+SPLUNK_PASSWORD="<Give-a-Password>"
 
 # --- Pre-Checks ---
 echo "[+] Checking prerequisites..."
