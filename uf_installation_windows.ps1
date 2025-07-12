@@ -40,17 +40,18 @@ if (!(Test-Path "$InstallDir\bin\splunk.exe")) {
 # =============================
 & "$InstallDir\bin\splunk.exe" set deploy-poll $DeployServer -auth "$SplunkUser:$SplunkPassword"
 
+########==========OPTIONAL--------------------START..............
 # ============================
 # === Configure outputs.conf ===
 # ============================
-$outConf = "$InstallDir\etc\system\local\outputs.conf"
-@"
-[tcpout]
-defaultGroup = default-autolb-group
+#$outConf = "$InstallDir\etc\system\local\outputs.conf"
+#@"
+#[tcpout]
+#defaultGroup = default-autolb-group
 
-[tcpout:default-autolb-group]
-server = <YOUR-INDEXER-IP>:9997
-"@ | Set-Content -Path $outConf -Encoding UTF8
+#[tcpout:default-autolb-group]
+#server = <YOUR-INDEXER-IP>:9997
+#"@ | Set-Content -Path $outConf -Encoding UTF8
 ###########
 #OR IF You Have multiple indexer
 #@"
@@ -66,20 +67,22 @@ server = <YOUR-INDEXER-IP>:9997
 # ============================
 # === Configure inputs.conf ===
 # ============================
-$inConf = "$InstallDir\etc\system\local\inputs.conf"
-@"
-[WinEventLog://Application]
-disabled = 0
-index = win
+#$inConf = "$InstallDir\etc\system\local\inputs.conf"
+#@"
+#[WinEventLog://Application]
+#disabled = 0
+#index = win
 
-[WinEventLog://Security]
-disabled = 0
-index = win
+#[WinEventLog://Security]
+#disabled = 0
+#index = win
 
-[WinEventLog://System]
-disabled = 0
-index = win
-"@ | Set-Content -Path $inConf -Encoding UTF8
+#[WinEventLog://System]
+#disabled = 0
+#index = win
+#"@ | Set-Content -Path $inConf -Encoding UTF8
+
+########==========OPTIONAL--------------------END...............
 
 # ============================
 # === Start UF Service =======
