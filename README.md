@@ -1,4 +1,4 @@
-# 🚀 Splunk Universal Forwarder Deployment Tracker
+# Splunk Universal Forwarder Deployment & Tracker
 
 ## 📌 Description
 
