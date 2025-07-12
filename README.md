@@ -40,7 +40,7 @@ This script:
 # Prerequisite: place Splunk UF .tgz in the same directory
 sudo bash uf_installation_script_linux.sh
 ```
-
+## 🪟 Windows UF Installation
 ### 🔧 Script: `uf_installation_script_windows.ps1`
 This script:
 - Installs the .msi silently
