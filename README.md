@@ -92,6 +92,6 @@ Ensure network firewall allows TCP/9997 from UFs to indexers.
 
 ---
 ## 📢 Author
-Golam Mortuja Mondal
+Golam Mortuja Mondal, 
 SOC Analyst & Splunk Engineer
 🔗 linkedin.com/in/mortuja001
