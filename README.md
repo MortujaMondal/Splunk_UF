@@ -91,3 +91,7 @@ Ensure network firewall allows TCP/9997 from UFs to indexers.
 - `check_forwarders.py`: Python script to hit Splunk's REST API and pull live status of forwarders (requires admin creds)
 
 ---
+## 📢 Author
+Golam Mortuja Mondal
+SOC Analyst & Splunk Engineer
+🔗 linkedin.com/in/mortuja001
