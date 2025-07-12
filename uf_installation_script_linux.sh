@@ -8,10 +8,10 @@
 USER="splunkfwd"
 GROUP="splunkfwd"
 SPLUNK_HOME="/opt/splunkforwarder"
-TAR_FILE="splunkforwarder-9.2.4-c103a21bb11d-Linux-x86_64.tgz"
+TAR_FILE="splunkforwarder-9.2.4-c103a21bb11d-Linux-x86_64.tgz" # Or You can Wget this
 DEPLOYMENT_SERVER="<Your-DS-IP>:8089"
 SPLUNK_USERNAME="splunk"
-SPLUNK_PASSWORD="<Give-a-Password>"
+SPLUNK_PASSWORD="<Give-a-Password-to-set>"
 
 # --- Pre-Checks ---
 echo "[+] Checking prerequisites..."
@@ -71,8 +71,17 @@ cat > "$SPLUNK_HOME/etc/system/local/outputs.conf" <<EOF
 defaultGroup = default-autolb-group
 
 [tcpout:default-autolb-group]
-server = 192.168.252.30:9997
+server = <IP-of-HF>:9997
 EOF
+#OR TRY This if you have multiple indexer
+#cat > "$SPLUNK_HOME/etc/system/local/outputs.conf" <<EOF
+#[tcpout]
+#defaultGroup = indexer_group
+
+#[tcpout:indexer_group]
+#server = 192.168.252.31:9997,192.168.252.32:9997,192.168.252.33:9997,...,192.168.252.44:9997
+#autoLBFrequency = 30
+#EOF
 
 cat > "$SPLUNK_HOME/etc/system/local/inputs.conf" <<EOF
 [monitor:///var/log/]
