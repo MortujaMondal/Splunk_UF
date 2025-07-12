@@ -95,3 +95,4 @@ Ensure network firewall allows TCP/9997 from UFs to indexers.
 Golam Mortuja Mondal, 
 SOC Analyst & Splunk Engineer
 🔗 linkedin.com/in/mortuja001
+https://help.splunk.com/en/splunk-enterprise/forward-and-process-data/universal-forwarder-manual/9.4/about-the-universal-forwarder/about-the-universal-forwarder
