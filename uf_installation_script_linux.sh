@@ -64,15 +64,16 @@ $SPLUNK_HOME/bin/splunk start --no-prompt
 echo "[+] Setting deployment server to $DEPLOYMENT_SERVER..."
 $SPLUNK_HOME/bin/splunk set deploy-poll "$DEPLOYMENT_SERVER" -auth "$SPLUNK_USERNAME:$SPLUNK_PASSWORD"
 
+############OPTIONAL####START###############################
 # --- Configure Inputs & Outputs ---
-echo "[+] Setting up default inputs & outputs (optional)..."
-cat > "$SPLUNK_HOME/etc/system/local/outputs.conf" <<EOF
-[tcpout]
-defaultGroup = default-autolb-group
+#echo "[+] Setting up default inputs & outputs (optional)..."
+#cat > "$SPLUNK_HOME/etc/system/local/outputs.conf" <<EOF
+#[tcpout]
+#defaultGroup = default-autolb-group
 
-[tcpout:default-autolb-group]
-server = <IP-of-HF>:9997
-EOF
+#[tcpout:default-autolb-group]
+#server = <IP-of-HF>:9997
+#EOF
 #OR TRY This if you have multiple indexer
 #cat > "$SPLUNK_HOME/etc/system/local/outputs.conf" <<EOF
 #[tcpout]
@@ -83,17 +84,18 @@ EOF
 #autoLBFrequency = 30
 #EOF
 
-cat > "$SPLUNK_HOME/etc/system/local/inputs.conf" <<EOF
-[monitor:///var/log/]
-disabled = false
-index = linux_all
-sourcetype = linux_syslog
+#cat > "$SPLUNK_HOME/etc/system/local/inputs.conf" <<EOF
+#[monitor:///var/log/]
+#disabled = false
+#index = linux_all
+#sourcetype = linux_syslog
 
-[monitor:///tmp/uf_heartbeat.log]
-disabled = false
-index = linux_all
-sourcetype = uf_heartbeat
-EOF
+#[monitor:///tmp/uf_heartbeat.log]
+#disabled = false
+#index = linux_all
+#sourcetype = uf_heartbeat
+#EOF
+############OPTIONAL##END#################################
 
 # --- OS-Specific Permission Handling ---
 echo "[+] Adjusting log permissions based on OS type..."
